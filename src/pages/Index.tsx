@@ -187,7 +187,7 @@ const Index = () => {
                 </div>
                 <div className="bg-gray-100 rounded-lg px-4 py-2">
                   <div className="text-xs text-muted-foreground mb-1">Документ</div>
-                  <div className="text-sm font-semibold text-foreground">Удостоверение ПК</div>
+                  <div className="text-sm font-semibold text-foreground">{index === 5 ? 'Сертификат' : 'Удостоверение ПК'}</div>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed max-w-4xl">
