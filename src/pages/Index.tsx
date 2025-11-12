@@ -142,16 +142,26 @@ const Index = () => {
               </p>
               <div className="mb-4 space-y-2">
                 {block.courses.map((course, courseIndex) => (
-                  <div key={courseIndex} className="flex items-center justify-between text-sm hover:bg-muted/30 p-2 rounded transition-colors">
-                    <a href="#" className="text-foreground hover:text-primary transition-colors flex-1">
-                      {typeof course === 'string' ? course : course.name}
-                    </a>
-                    <span className={`text-xs font-semibold whitespace-nowrap ml-3 ${
-                      typeof course === 'object' && course.isFree ? 'text-green-600 bg-green-100 px-2 py-1 rounded' : 'text-muted-foreground'
-                    }`}>
-                      {typeof course === 'string' ? '' : course.price}
-                    </span>
-                  </div>
+                  <a 
+                    key={courseIndex} 
+                    href="#" 
+                    className="block bg-gradient-to-r from-muted/30 to-muted/10 hover:from-primary/10 hover:to-primary/5 p-3 rounded-lg transition-all hover:shadow-md border border-transparent hover:border-primary/20"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground leading-snug">
+                          {typeof course === 'string' ? course : course.name}
+                        </p>
+                      </div>
+                      <span className={`text-xs font-bold whitespace-nowrap flex-shrink-0 ${
+                        typeof course === 'object' && course.isFree 
+                          ? 'text-green-600 bg-green-100 px-3 py-1 rounded-full' 
+                          : 'text-primary bg-primary/10 px-3 py-1 rounded-full'
+                      }`}>
+                        {typeof course === 'string' ? '' : course.price}
+                      </span>
+                    </div>
+                  </a>
                 ))}
               </div>
               <div className="flex items-center gap-3 text-xs text-muted-foreground border-t pt-3">
