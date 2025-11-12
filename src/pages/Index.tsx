@@ -138,18 +138,16 @@ const Index = () => {
               </div>
             </div>
             <div className="w-96 flex-shrink-0">
-              <Card className="p-6 bg-gray-50 border-gray-200 rounded-2xl h-full">
+              <Card className="p-6 bg-gray-50 border-gray-200 rounded-2xl">
                 <h3 className="text-lg font-bold text-foreground mb-4">Коротко</h3>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white border border-gray-200 rounded-xl p-4">
-                      <div className="text-xs text-muted-foreground mb-2">Формат</div>
-                      <div className="text-sm font-semibold text-foreground">Онлайн</div>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-4">
-                      <div className="text-xs text-muted-foreground mb-2">Документ</div>
-                      <div className="text-sm font-semibold text-foreground">Удостоверение ПК</div>
-                    </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white border border-gray-200 rounded-xl p-4">
+                    <div className="text-xs text-muted-foreground mb-2">Формат</div>
+                    <div className="text-sm font-semibold text-foreground">Онлайн</div>
+                  </div>
+                  <div className="bg-white border border-gray-200 rounded-xl p-4">
+                    <div className="text-xs text-muted-foreground mb-2">Документ</div>
+                    <div className="text-sm font-semibold text-foreground">Удостоверение ПК</div>
                   </div>
                   <div className="bg-white border border-gray-200 rounded-xl p-4">
                     <div className="text-xs text-muted-foreground mb-2">Для кого</div>
