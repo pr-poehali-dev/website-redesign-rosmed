@@ -93,12 +93,15 @@ const Index = () => {
         <div className="container mx-auto px-4 py-5">
           <nav className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">НО</span>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-primary">НОЦ СМТ</div>
-                <div className="text-xs text-muted-foreground">Союз охраны психического здоровья</div>
+              <img 
+                src="https://cdn.poehali.dev/files/ebc39e0f-7903-4e2b-a686-a7304d067697.png" 
+                alt="МЕДОБРАЗ Лого" 
+                className="h-12 w-auto"
+              />
+              <div className="max-w-xs">
+                <div className="text-xs text-muted-foreground leading-tight">
+                  Научно-образовательный центр современных медицинских технологий при поддержке Союза охраны психического здоровья
+                </div>
               </div>
             </Link>
             <div className="flex gap-8 items-center">
@@ -115,30 +118,52 @@ const Index = () => {
 
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
-              Направления обучения
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-              Лицензированные программы повышения квалификации для психологов и специалистов помогающих профессий.
-            </p>
-            <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Icon name="Check" size={16} className="text-primary" />
-                <span>Все программы проходят онлайн, включают лекции и практические модули.</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Icon name="Check" size={16} className="text-primary" />
-                <span>По итогам обучения — удостоверение о повышении квалификации установленного государственного образца.</span>
+          <div className="max-w-6xl mx-auto flex gap-8">
+            <div className="flex-1">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+                Направления обучения
+              </h1>
+              <p className="text-lg text-muted-foreground mb-8">
+                Лицензированные программы повышения квалификации для психологов и специалистов помогающих профессий.
+              </p>
+              <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Icon name="Check" size={16} className="text-primary" />
+                  <span>Все программы проходят онлайн, включают лекции и практические модули.</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Icon name="Check" size={16} className="text-primary" />
+                  <span>По итогам обучения — удостоверение о повышении квалификации установленного государственного образца.</span>
+                </div>
               </div>
             </div>
-            <div className="mt-8 flex gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-medium rounded-full px-6">
-                Получить консультацию
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5 font-medium rounded-full px-6">
-                Смотреть направления
-              </Button>
+            <div className="w-96 flex-shrink-0">
+              <Card className="p-6 bg-gray-50 border-gray-200 rounded-2xl">
+                <h3 className="text-lg font-bold text-foreground mb-4">Коротко</h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4">
+                      <div className="text-xs text-muted-foreground mb-2">Формат</div>
+                      <div className="text-sm font-semibold text-foreground">Онлайн</div>
+                    </div>
+                    <div className="bg-white border border-gray-200 rounded-xl p-4">
+                      <div className="text-xs text-muted-foreground mb-2">Документ</div>
+                      <div className="text-sm font-semibold text-foreground">Удостоверение ПК</div>
+                    </div>
+                  </div>
+                  <div className="bg-white border border-gray-200 rounded-xl p-4">
+                    <div className="text-xs text-muted-foreground mb-2">Для кого</div>
+                    <div className="text-sm font-semibold text-foreground">Психологи, смежные специалисты</div>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      для психологов, психиатров, социальных работников и всех специалистов помогающих профессий
+                    </p>
+                  </div>
+                  <div className="bg-white border border-gray-200 rounded-xl p-4">
+                    <div className="text-xs text-muted-foreground mb-2">Поддержка</div>
+                    <div className="text-sm font-semibold text-foreground">Методисты НОЦ СМТ</div>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </div>
