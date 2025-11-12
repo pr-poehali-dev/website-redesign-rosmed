@@ -102,18 +102,12 @@ const Index = () => {
               </div>
             </Link>
             <div className="flex gap-8 items-center">
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Направления
-              </Link>
               <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Лицензия
+                О центре
               </Link>
-              <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Как выбрать
+              <Link to="/" className="text-sm font-medium text-primary">
+                Направления обучения
               </Link>
-              <Button className="bg-primary hover:bg-primary/90 text-white font-medium rounded-full">
-                Получить консультацию
-              </Button>
             </div>
           </nav>
         </div>
