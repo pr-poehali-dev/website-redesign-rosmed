@@ -96,7 +96,7 @@ const Index = () => {
               <img 
                 src="https://cdn.poehali.dev/files/ebc39e0f-7903-4e2b-a686-a7304d067697.png" 
                 alt="МЕДОБРАЗ Лого" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
               <div className="max-w-xs">
                 <div className="text-xs text-muted-foreground leading-tight">
@@ -118,8 +118,8 @@ const Index = () => {
 
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto flex gap-8">
-            <div className="flex-1">
+          <div className="max-w-6xl mx-auto flex gap-8 items-start">
+            <div className="flex-1 min-h-[320px] flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
                 Направления обучения
               </h1>
@@ -138,7 +138,7 @@ const Index = () => {
               </div>
             </div>
             <div className="w-96 flex-shrink-0">
-              <Card className="p-6 bg-gray-50 border-gray-200 rounded-2xl">
+              <Card className="p-6 bg-gray-50 border-gray-200 rounded-2xl h-full">
                 <h3 className="text-lg font-bold text-foreground mb-4">Коротко</h3>
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
@@ -153,9 +153,8 @@ const Index = () => {
                   </div>
                   <div className="bg-white border border-gray-200 rounded-xl p-4">
                     <div className="text-xs text-muted-foreground mb-2">Для кого</div>
-                    <div className="text-sm font-semibold text-foreground">Психологи, смежные специалисты</div>
-                    <p className="text-xs text-muted-foreground mt-2">
-                      для психологов, психиатров, социальных работников и всех специалистов помогающих профессий
+                    <p className="text-sm font-semibold text-foreground leading-relaxed">
+                      психологов, психиатров, социальных работников и всех специалистов помогающих профессий
                     </p>
                   </div>
                   <div className="bg-white border border-gray-200 rounded-xl p-4">
@@ -176,6 +175,11 @@ const Index = () => {
               <div className="flex items-start gap-4 mb-4">
                 <h2 className="text-2xl font-bold text-primary flex-1">
                   {block.title}
+                  {index === 5 && (
+                    <span className="ml-3 text-sm font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">
+                      Бесплатно
+                    </span>
+                  )}
                 </h2>
                 <div className="bg-gray-100 rounded-lg px-4 py-2">
                   <div className="text-xs text-muted-foreground mb-1">Формат</div>
