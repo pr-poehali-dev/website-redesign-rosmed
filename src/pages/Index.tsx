@@ -89,110 +89,127 @@ const courseBlocks = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b">
-        <div className="container mx-auto px-4 py-4">
+      <header className="bg-white shadow-sm">
+        <div className="container mx-auto px-4 py-5">
           <nav className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold text-primary">
-              НОЦ СМТ
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-lg">НО</span>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-primary">НОЦ СМТ</div>
+                <div className="text-xs text-muted-foreground">Союз охраны психического здоровья</div>
+              </div>
             </Link>
-            <div className="flex gap-6">
-              <Link to="/" className="text-primary font-semibold">
+            <div className="flex gap-8 items-center">
+              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 Направления
               </Link>
-              <Link to="/about" className="text-foreground hover:text-primary transition-colors">
-                О центре
+              <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Лицензия
               </Link>
+              <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Как выбрать
+              </Link>
+              <Button className="bg-primary hover:bg-primary/90 text-white font-medium rounded-full">
+                Получить консультацию
+              </Button>
             </div>
           </nav>
         </div>
       </header>
 
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-12">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              📚 Направления обучения
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+              Направления обучения
             </h1>
-            <p className="text-lg text-muted-foreground mb-6">
-              Лицензированные программы для психологов и специалистов помогающих профессий
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
+              Лицензированные программы повышения квалификации для психологов и специалистов помогающих профессий.
             </p>
-            <Button size="lg" className="text-lg px-8 shadow-lg">
-              Получить консультацию
-            </Button>
+            <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Icon name="Check" size={16} className="text-primary" />
+                <span>Все программы проходят онлайн, включают лекции и практические модули.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon name="Check" size={16} className="text-primary" />
+                <span>По итогам обучения — удостоверение о повышении квалификации установленного государственного образца.</span>
+              </div>
+            </div>
+            <div className="mt-8 flex gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-medium rounded-full px-6">
+                Получить консультацию
+              </Button>
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5 font-medium rounded-full px-6">
+                Смотреть направления
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+      <main className="container mx-auto px-4 py-16 bg-background">
+        <div className="max-w-5xl mx-auto">
           {courseBlocks.map((block, index) => (
-            <Card key={index} className="p-6 hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className="flex gap-4 mb-4">
-                <div className={`w-14 h-14 ${block.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                  <Icon name={block.icon} className={block.iconColor} size={28} />
+            <div key={index} className="mb-12 bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+              <div className="flex items-start gap-4 mb-4">
+                <h2 className="text-2xl font-bold text-primary flex-1">
+                  {block.title}
+                </h2>
+                <div className="bg-gray-100 rounded-lg px-4 py-2">
+                  <div className="text-xs text-muted-foreground mb-1">Формат</div>
+                  <div className="text-sm font-semibold text-foreground">Онлайн</div>
                 </div>
-                <div className="flex-1">
-                  <h2 className="text-xl font-bold text-foreground leading-tight">
-                    {block.title}
-                  </h2>
+                <div className="bg-gray-100 rounded-lg px-4 py-2">
+                  <div className="text-xs text-muted-foreground mb-1">Документ</div>
+                  <div className="text-sm font-semibold text-foreground">Удостоверение ПК</div>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed max-w-4xl">
                 {block.description}
               </p>
-              <div className="mb-4 space-y-2">
+              <div className="grid md:grid-cols-2 gap-4">
                 {block.courses.map((course, courseIndex) => (
                   <a 
                     key={courseIndex} 
                     href="#" 
-                    className="block bg-gradient-to-r from-muted/30 to-muted/10 hover:from-primary/10 hover:to-primary/5 p-3 rounded-lg transition-all hover:shadow-md border border-transparent hover:border-primary/20"
+                    className="group block bg-white border border-gray-200 hover:border-primary/40 rounded-xl p-4 transition-all hover:shadow-md"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-foreground leading-snug">
+                        <p className="text-sm font-medium text-foreground leading-snug group-hover:text-primary transition-colors">
                           {typeof course === 'string' ? course : course.name}
                         </p>
+                        <div className="flex items-center gap-2 mt-2 text-xs text-muted-foreground">
+                          <Icon name="ExternalLink" size={12} />
+                          <span>Открыть страницу курса</span>
+                        </div>
                       </div>
-                      <span className={`text-xs font-bold whitespace-nowrap flex-shrink-0 ${
-                        typeof course === 'object' && course.isFree 
-                          ? 'text-green-600 bg-green-100 px-3 py-1 rounded-full' 
-                          : 'text-primary bg-primary/10 px-3 py-1 rounded-full'
-                      }`}>
-                        {typeof course === 'string' ? '' : course.price}
-                      </span>
                     </div>
                   </a>
                 ))}
               </div>
-              <div className="flex items-center gap-3 text-xs text-muted-foreground border-t pt-3">
-                <div className="flex items-center gap-1">
-                  <Icon name="MonitorPlay" size={14} />
-                  <span>Онлайн</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Icon name="Award" size={14} />
-                  <span>Сертификат</span>
-                </div>
-              </div>
-            </Card>
+            </div>
           ))}
         </div>
       </main>
 
-      <section className="bg-gradient-to-br from-purple-50 to-blue-50 py-12">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-6 bg-white/80 backdrop-blur border-2 border-primary/20 shadow-lg">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="FileCheck" className="text-primary" size={24} />
+          <div className="max-w-5xl mx-auto">
+            <Card className="p-8 bg-gray-50 border-gray-200 shadow-sm rounded-2xl">
+              <div className="flex items-start gap-6">
+                <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="FileCheck" className="text-secondary" size={28} />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-xl font-bold mb-2 text-foreground">✅ Лицензия и надёжность</h2>
-                  <p className="text-sm text-foreground mb-3">
+                  <h2 className="text-2xl font-bold mb-3 text-primary">Лицензия и надёжность</h2>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     Все программы реализуются по лицензии на образовательную деятельность. Выдаём удостоверения государственного образца.
                   </p>
-                  <Button variant="link" className="text-primary p-0 h-auto font-semibold text-sm">
+                  <Button variant="link" className="text-secondary p-0 h-auto font-semibold text-sm hover:text-secondary/80">
                     Посмотреть лицензию →
                   </Button>
                 </div>
@@ -202,25 +219,25 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">💬 Нужна помощь в выборе?</h2>
-            <p className="text-base text-muted-foreground mb-6">
+            <h2 className="text-3xl font-bold mb-4 text-primary">Нужна помощь в выборе?</h2>
+            <p className="text-base text-muted-foreground mb-8">
               Методист центра поможет подобрать программу под ваш опыт и цели
             </p>
-            <Button size="lg" className="text-lg px-8 shadow-lg">
+            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-medium rounded-full px-8">
               Получить консультацию →
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-background">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center text-foreground">❓ Частые вопросы</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-bold mb-8 text-primary">Частые вопросы</h2>
+            <div className="space-y-3">
               {[
                 {
                   q: 'Как проходит обучение?',
@@ -247,7 +264,7 @@ const Index = () => {
                   a: 'Да! Мы предлагаем бесплатные программы: "Школа волонтёров в психиатрии" и "Социальный импакт". Они доступны всем желающим.'
                 }
               ].map((faq, index) => (
-                <Card key={index} className="p-6 hover:shadow-md transition-shadow">
+                <Card key={index} className="p-5 hover:shadow-sm transition-shadow bg-white border-gray-200">
                   <details className="group">
                     <summary className="font-semibold text-base text-foreground cursor-pointer list-none flex items-center justify-between">
                       <span>{faq.q}</span>
@@ -264,7 +281,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="border-t py-8 bg-muted/20">
+      <footer className="border-t py-6 bg-white">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>© 2024 НОЦ СМТ. Все права защищены.</p>
         </div>
