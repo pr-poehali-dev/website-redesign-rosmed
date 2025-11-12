@@ -119,25 +119,27 @@ const Index = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto flex gap-8 items-start">
-            <div className="flex-1 min-h-[320px] flex flex-col justify-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
-                Направления обучения
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                Лицензированные программы повышения квалификации для психологов и специалистов помогающих профессий.
-              </p>
-              <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Icon name="Check" size={16} className="text-primary" />
-                  <span>Все программы проходят онлайн, включают лекции и практические модули.</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="Check" size={16} className="text-primary" />
-                  <span>По итогам обучения — удостоверение о повышении квалификации установленного государственного образца.</span>
+            <div className="w-1/2 flex-shrink-0">
+              <div className="min-h-[320px] flex flex-col justify-center">
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+                  Направления обучения
+                </h1>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Лицензированные программы повышения квалификации для психологов и специалистов помогающих профессий.
+                </p>
+                <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-primary" />
+                    <span>Все программы проходят онлайн, включают лекции и практические модули.</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-primary" />
+                    <span>По итогам обучения — удостоверение о повышении квалификации установленного государственного образца.</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="w-96 flex-shrink-0">
+            <div className="w-1/2 flex-shrink-0">
               <Card className="p-6 bg-gray-50 border-gray-200 rounded-2xl">
                 <h3 className="text-lg font-bold text-foreground mb-4">Коротко</h3>
                 <div className="grid grid-cols-2 gap-4">
